@@ -1,5 +1,4 @@
 const express = require("express");
-const res = require("express/lib/response");
 const Author = require("../models/author");
 const router = express.Router();
 
@@ -16,10 +15,12 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Rendering -add author- page
 router.get("/new", (req, res) => {
   res.render("authors/new", { author: new Author() });
 });
 
+// adding new author
 router.post("/", async (req, res) => {
   const author = new Author({
     name: req.body.name,
