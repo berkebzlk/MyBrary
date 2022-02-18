@@ -1,0 +1,5 @@
+multer: dosya göndermek için kullanılıyor. Burada fotoğraf göndermek için kullandık.
+path: adresleri birleştirmek için kullandık. path.join('/bir', 'iki', 'uc'); // output: /bir/iki/uc
+
+
+sadece css videolarını uygulamadım
