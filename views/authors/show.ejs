@@ -1,11 +1,17 @@
-<h2><%= author.name %></h2>
-<a href="/authors/<%= author.id %>/edit">Edit</a>
-<%- include('../partials/deleteForm', { url: `authors/${author.id}` }) %>
+<div class="flex justify-between mb-4 hover:bg-zinc-300 rounded p-2">
+    <h2 class="text-xl"><%= author.name %></h2>
+    <div class="flex text-lg">
+        <a class="px-2 hover:bg-green-500 rounded transition-all" href="/authors/<%= author.id %>/edit">Edit</a>
+        <%- include('../partials/deleteForm', { url: `authors/${author.id}` }) %>
+    </div>
+</div>
 <% if(booksByAuthor.length > 0) { %>
-    <h2>Books by Author</h2>
-    <% booksByAuthor.forEach(book => { %>
-        <a href="/books/<%= book.id %>">
-            <img src="<%= book.coverImagePath %> " height="150" width="100" alt="">
-        </a>
-    <% }) %> 
+    <h2 class="text-xl mb-4">Books by Author</h2>
+    <div class="grid grid-cols-5 gap-4">
+        <% booksByAuthor.forEach(book => { %>
+            <a class="w-36 h-44 mb-4 block rounded overflow-hidden hover:shadow-lg" href="/books/<%= book.id %>">
+                <img src="<%= book.coverImagePath %>" class="h-full w-full" alt="">
+              </a>
+        <% }) %> 
+    </div>
 <%  } %> 

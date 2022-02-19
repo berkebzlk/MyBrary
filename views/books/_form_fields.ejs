@@ -1,8 +1,9 @@
-<div>
+<div class="mb-2 flex gap-3 justify-end">
     <label>Title</label>
     <input type="text" name="title" value="<%= book.title %>">
-  </div>
-  <div>
+</div>
+
+<div class="mb-2 flex gap-3 justify-end">
     <label>Author</label>
     <select name="author">
     <% authors.forEach(author => { %>
@@ -13,22 +14,25 @@
       <% } %>
     <% }) %>
     </select>
-  </div>
-  <div>
+</div>
+
+<div class="mb-2 flex gap-3 justify-end">
     <label>Publish Date</label>
     <input type="date" name="publishDate"
           value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
-  </div>
-  <div>
+</div>
+
+<div class="mb-2 flex gap-3 justify-end">
     <label>Page Count</label>
     <input type="number" name="pageCount" min="1" value="<%= book.pageCount %>">
-  </div>
-  </div>
-  <div>
+</div>
+
+<div class="mb-2 flex gap-3 justify-end">
     <label>Cover</label>
-    <input type="file" name="cover" class="filepond">
-  </div>
-  <div>
+    <input type="file" name="cover" class="filepond w-36 h-44">
+</div>
+
+<div class="mb-2 flex gap-3 justify-end">
     <label>Description</label>
     <textarea name="description"><%= book.description %></textarea>
-  </div>
+</div>

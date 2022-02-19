@@ -1,8 +1,8 @@
-<h2>Recently Added</h2>
-<div>
+  <h2 class="text-xl mb-8">Recently Added</h2>
+  <div class="grid grid-cols-5 gap-4">
     <% books.forEach(book => { %>
-       <a href="/books/<%= book.id %>">
-         <img src="<%= book.coverImagePath %>" height="150" width="100" alt="">
+       <a class="w-36 h-44 mb-4 block rounded overflow-hidden hover:shadow-lg" href="/books/<%= book.id %>">
+         <img src="<%= book.coverImagePath %>" class="h-full w-full" alt="">
        </a>
     <% }) %> 
-</div>
+  </div>

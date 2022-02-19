@@ -1,17 +1,22 @@
-<h2>Search Author</h2>
-<form action="/authors" method="get">
-    <label>Name</label>
-    <input type="text" name="name" value="<%= searchOptions.name %>">
-    <button type="submit">Search</button>
+<h2 class="text-xl mb-2">Search Author</h2>
+<form class="border w-fit p-2 rounded" action="/authors" method="get">
+    <label class="mr-1">Name</label>
+    <input class="mr-1 rounded" type="text" name="name" value="<%= searchOptions.name %>">
+    <button class="hover:text-gray-500" type="submit">Search</button>
 </form>
 <br>
 <% authors.forEach(author => { %>
-    <div><%= author.name %> </div> 
-    <a href="/authors/<%= author.id %>">View</a>
-    <a href="/authors/<%= author.id %>/edit">Edit</a>
-    
-    <%- include('../partials/deleteForm', 
+    <div class="flex justify-between mb-4 hover:bg-zinc-300 rounded p-2">
+
+        <div class="text-xl"><%= author.name %> </div> 
+
+        <div class="flex text-lg">
+        <a class="px-2 hover:bg-green-500 rounded transition-all" href="/authors/<%= author.id %>">View</a>
+        <a class="px-2 hover:bg-yellow-500 rounded transition-all" href="/authors/<%= author.id %>/edit">Edit</a>
+        <%- include('../partials/deleteForm', 
                 {url: `/authors/${author.id}`})
-    %> 
+        %> 
+        </div>
+    </div>
     
 <% }) %> 

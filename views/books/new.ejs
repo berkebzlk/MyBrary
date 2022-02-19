@@ -1,6 +1,8 @@
-<h2>New Book</h2>
-<form action="/books" method="post">
+<h2 class="text-xl mb-4">New Book</h2>
+<form class="border p-2 rounded w-fit mb-8" action="/books" method="post">
   <%- include('./_form_fields') %>
-  <a href="/books">Cancel</a>
-  <button type="submit">Create</button>
+  <div class="flex justify-end">
+    <a class=" px-3 py-1 rounded hover:bg-red-500 transition-all"  href="/books">Cancel</a>
+    <button class="bg-gray-400 px-3 py-1 rounded hover:bg-green-500 transition-all"  type="submit">Create</button>
+  </div>
 </form>
