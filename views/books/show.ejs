@@ -1,17 +1,21 @@
-<div class="w-fit">
-    <h2 class="text-xl mb-4"><%= book.title %></h2>
-<div class="w-36 h-44 mb-4 block rounded overflow-hidden">
-<img src="<%= book.coverImagePath %>" class="h-full w-full" alt="">
-</div>
-<div class="text-lg">Author: <%= book.author.name %></div>
-<div class="text-lg">Publish Date: <%= book.publishDate.toDateString() %></div>
-<div class="text-lg">Page Count: <%= book.pageCount %></div>
-<div class="text-lg">Description <%= book.description %></div>
+<div class="lg:flex lg:items-center lg:gap-4">
+    <div>
+        <h2 class="sm:text-xl sm:mb-4"><%= book.title %></h2>
+        <div class="sm:w-36 sm:h-44 sm:mb-4 sm:block sm:rounded sm:overflow-hidden">
+            <img src="<%= book.coverImagePath %>" class="sm:h-full sm:w-full" alt="">
+        </div>
+    </div>
 
-<div class="-ml-2 flex justify-start items-center text-lg">
-    <a class="px-2 hover:bg-yellow-500 rounded transition-all" href="/books/<%= book.id %>/edit">Edit</a>
+    <div class="lg:flex lg:flex-col lg:gap-4">
+        <div class="sm:text-lg">Author: <%= book.author.name %></div>
+        <div class="sm:text-lg">Publish Date: <%= book.publishDate.toDateString() %></div>
+        <div class="sm:text-lg">Page Count: <%= book.pageCount %></div>
+        <div class="sm:text-lg">Description <%= book.description %></div>
+    </div>
+</div>
+
+<div class="sm:-ml-2 sm:flex sm:justify-start sm:items-center sm:text-lg">
+    <a class="sm:px-2 sm:hover:bg-yellow-500 sm:rounded sm:transition-all" href="/books/<%= book.id %>/edit">Edit</a>
     <%- include('../partials/deleteForm', { url: `/books/${book.id}` }) %>
-<a class="px-2 hover:bg-gray-500 rounded transition-all" href="/authors/<%= book.author.id %>">View Author</a> 
-
-</div>
+    <a class="sm:px-2 sm:hover:bg-gray-500 sm:rounded sm:transition-all" href="/authors/<%= book.author.id %>">View Author</a> 
 </div>

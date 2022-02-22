@@ -1,8 +1,8 @@
-  <h2 class="text-xl mb-8">Recently Added</h2>
-  <div class="grid grid-cols-5 gap-4">
+  <h2 class="text-xl mb-8 text-center sm:text-xl sm:mb-8 sm:text-center">Recently Added</h2>
+  <div class="flex flex-col justify-center items-center sm:flex sm:flex-col sm:justify-center sm:items-center lg:grid lg:grid-cols-4 lg:place-items-center lg:gap-4">
     <% books.forEach(book => { %>
-       <a class="w-36 h-44 mb-4 block rounded overflow-hidden hover:shadow-lg" href="/books/<%= book.id %>">
-         <img src="<%= book.coverImagePath %>" class="h-full w-full" alt="">
+       <a class="block w-52 h-64 mb-4 rounded overflow-hidden hover:shadow-lg sm:block sm:w-60 sm:h-80 sm:mb-4 sm:rounded sm:overflow-hidden sm:hover:shadow-lg lg:w-40 lg:h-64" href="/books/<%= book.id %>">
+         <img src="<%= book.coverImagePath %>" class="object-fit w-full h-full sm:object-fit sm:w-full sm:h-full" alt="">
        </a>
     <% }) %> 
   </div>

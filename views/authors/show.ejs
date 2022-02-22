@@ -1,16 +1,16 @@
-<div class="flex justify-between mb-4 hover:bg-zinc-300 rounded p-2">
-    <h2 class="text-xl"><%= author.name %></h2>
-    <div class="flex text-lg">
-        <a class="px-2 hover:bg-green-500 rounded transition-all" href="/authors/<%= author.id %>/edit">Edit</a>
+<div class="sm:flex sm:justify-between sm:mb-4 sm:hover:bg-zinc-300 sm:rounded p-2">
+    <h2 class="sm:text-xl"><%= author.name %></h2>
+    <div class="sm:flex sm:text-lg sm:mb-4">
+        <a class="sm:px-2 sm:hover:bg-green-500 sm:rounded sm:transition-all" href="/authors/<%= author.id %>/edit">Edit</a>
         <%- include('../partials/deleteForm', { url: `authors/${author.id}` }) %>
     </div>
 </div>
 <% if(booksByAuthor.length > 0) { %>
-    <h2 class="text-xl mb-4">Books by Author</h2>
-    <div class="grid grid-cols-5 gap-4">
+    <h2 class="sm:text-xl sm:mb-8 sm:flex sm:justify-center">Books by Author</h2>
+    <div class="sm:flex sm:flex-col sm:justify-center sm:items-center">
         <% booksByAuthor.forEach(book => { %>
-            <a class="w-36 h-44 mb-4 block rounded overflow-hidden hover:shadow-lg" href="/books/<%= book.id %>">
-                <img src="<%= book.coverImagePath %>" class="h-full w-full" alt="">
+            <a class="sm:block sm:w-60 sm:h-80 sm:mb-4 sm:rounded sm:overflow-hidden sm:hover:shadow-lg" href="/books/<%= book.id %>">
+                <img src="<%= book.coverImagePath %>" class="sm:object-fit sm:w-full sm:h-full" alt="">
               </a>
         <% }) %> 
     </div>

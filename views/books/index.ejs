@@ -1,23 +1,23 @@
-<h2 class="text-xl mb-4">Search Book</h2>
-<form class="border p-2 rounded w-fit mb-8" action="/books" method="get">
-   <div class="mb-2 flex gap-3 justify-end">
+<h2 class="sm:text-xl sm:mb-4">Search Book</h2>
+<form class="sm:border sm:p-2 sm:rounded sm:w-fit sm:mb-8" action="/books" method="get">
+   <div class="mb-2 sm:flex sm:gap-3 sm:justify-end">
     <label>Title</label>
     <input type="text" name="title" value="<%= searchOptions.title %>">
    </div>
-   <div  class="mb-2 flex gap-3 justify-end">
+   <div  class="mb-2 sm:flex sm:gap-3 sm:justify-end">
     <label>Publish After</label>
     <input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
    </div>
-   <div  class="mb-2 flex gap-3 justify-end">
+   <div  class="mb-2 sm:flex sm:gap-3 sm:justify-end">
     <label>Publish Before</label>
     <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
    </div>
-    <div class="flex justify-end"><button class="bg-gray-400 px-3 py-1 rounded hover:bg-gray-500 transition-all" type="submit">Search</button></div>
+    <div class="sm:flex sm:justify-end"><button class="sm:bg-gray-400 sm:px-3 sm:py-1 sm:rounded sm:hover:bg-gray-500 sm:transition-all" type="submit">Search</button></div>
 </form>
-<div class="grid grid-cols-5 gap-4">
+<div class="block w-52 h-64 mb-4 rounded overflow-hidden hover:shadow-lg sm:block sm:w-60 sm:h-80 sm:mb-4 sm:rounded sm:overflow-hidden sm:hover:shadow-lg lg:w-40 lg:h-64">
     <% books.forEach(book => { %>
-        <a class="w-36 h-44 mb-4 block rounded overflow-hidden hover:shadow-lg" href="/books/<%= book.id %>">
-            <img src="<%= book.coverImagePath %>" class="h-full w-full" alt="">
-          </a>
+       <a class="sm:block sm:w-60 sm:h-80 sm:mb-4 sm:rounded sm:overflow-hidden sm:hover:shadow-lg lg:w-40 lg:h-64" href="/books/<%= book.id %>">
+         <img src="<%= book.coverImagePath %>" class="sm:object-fit sm:w-full sm:h-full" alt="">
+       </a>
     <% }) %> 
-</div>
+  </div>
